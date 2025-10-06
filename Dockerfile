@@ -15,4 +15,4 @@ COPY . /app
 EXPOSE 8080
 
 ENV FLASK_APP=labapp:app
-CMD ["flask", "run", "--host=0.0.0.0", "-p", "$PORT"]
+CMD exec flask run --host=0.0.0.0 -p ${PORT}
