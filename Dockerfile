@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11.3-slim-bullseye
 
 WORKDIR /app
 
@@ -14,4 +14,5 @@ COPY . /app
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "flask --app app --debug run --host=0.0.0.0 -p ${PORT:-8080}"]
+ENV FLASK_APP=labapp:app
+CMD ["flask", "run", "--host=0.0.0.0", "-p", "$PORT"]

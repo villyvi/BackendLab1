@@ -7,6 +7,6 @@ services:
       dockerfile: Dockerfile
     restart: always
     environment:
-      - PORT=8080
+      - FLASK_APP=labapp:app
     ports:
       - "8080:8080"
